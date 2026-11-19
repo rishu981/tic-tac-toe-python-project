@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Tic-Tac-Toe • Python & Minimax AI</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="game-card">
+      <header class="page-header">
+        <span class="badge">PYTHON STANDARD LIBRARY • MINIMAX AI</span>
+        <h1>Tic-Tac-Toe</h1>
+        <p class="subtitle">Classic 3x3 game with Python-powered decision logic</p>
+      </header>
+
+      <!-- Settings Controls -->
+      <section class="controls-panel" aria-label="Game Settings">
+        <div class="control-group">
+          <label for="mode">Game Mode</label>
+          <select id="mode">
+            <option value="pvc">Player vs Computer</option>
+            <option value="pvp">Player vs Player</option>
+          </select>
+        </div>
+
+        <div class="control-group" id="difficulty-group">
+          <label for="difficulty">AI Difficulty</label>
+          <select id="difficulty">
+            <option value="hard" selected>Hard (Minimax AI)</option>
+            <option value="medium">Medium (Smart)</option>
+            <option value="easy">Easy (Random)</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Scoreboard -->
+      <section class="scoreboard" aria-label="Scoreboard">
+        <div class="score-card x-card">
+          <span class="player-tag">PLAYER X</span>
+          <strong id="x-score">0</strong>
+          <span class="subtext" id="x-label">You</span>
+        </div>
+        <div class="score-card draw-card">
+          <span class="player-tag">DRAWS</span>
+          <strong id="draw-score">0</strong>
+          <span class="subtext">Ties</span>
+        </div>
+        <div class="score-card o-card">
+          <span class="player-tag" id="o-title">COMPUTER (O)</span>
+          <strong id="o-score">0</strong>
+          <span class="subtext" id="o-label">AI</span>
+        </div>
+      </section>
+
+      <!-- Turn & Game Status Indicator -->
+      <div class="status-container">
+        <p class="status" id="status" role="status" aria-live="polite">
+          Loading game...
+        </p>
+      </div>
+
+      <!-- 3x3 Board -->
+      <section class="board" aria-label="Tic-Tac-Toe Grid">
+        <button class="square" data-index="0" type="button" aria-label="Square 1"></button>
+        <button class="square" data-index="1" type="button" aria-label="Square 2"></button>
+        <button class="square" data-index="2" type="button" aria-label="Square 3"></button>
+        <button class="square" data-index="3" type="button" aria-label="Square 4"></button>
+        <button class="square" data-index="4" type="button" aria-label="Square 5"></button>
+        <button class="square" data-index="5" type="button" aria-label="Square 6"></button>
+        <button class="square" data-index="6" type="button" aria-label="Square 7"></button>
+        <button class="square" data-index="7" type="button" aria-label="Square 8"></button>
+        <button class="square" data-index="8" type="button" aria-label="Square 9"></button>
+      </section>
+
+      <!-- Action Buttons -->
+      <div class="actions">
+        <button class="action-button primary" id="new-game" type="button">
+          New Round
+        </button>
+        <button class="action-button secondary" id="reset-scores" type="button">
+          Reset Scores
+        </button>
+      </div>
+
+      <footer class="footer-info">
+        <p>Backend logic runs in <strong>Python</strong> via REST API on <code>http://127.0.0.1:8000</code></p>
+      </footer>
+    </main>
+  </body>
+</html>
